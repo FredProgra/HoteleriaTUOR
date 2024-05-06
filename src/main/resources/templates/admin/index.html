@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+
+</head>
+<body class="page-home">
+<!----<nav th:replace="~{layout::main}"></nav>----->
+
+
+<div id="container">
+
+    <!-- HEADER -->
+    <header th:replace="~{layout::header}"></header>
+
+    <!-- HEADER -->
+
+
+    <div id="slider">
+        <div class="slider_item"><img th:src="@{/img/slide-1.jpg}" alt="Callao Monumental" title="Callao Monumental"></div>
+        <div class="slider_item is-hidden"><img th:src="@{img/slide-2.jpg}" alt="Fortaleza del Real Felipe" title="Fortaleza del Real Felipe"></div>
+        <div class="slider_item is-hidden"><img th:src="@{img/slide-3.jpg}" alt="Museo Naval del Callao" title="Museo Naval del Callao"></div>
+        <div class="slider_item is-hidden"><img th:src="@{img/slide-4.jpg}" alt="Islas Palomino" title="Islas Palomino"></div>
+    </div>
+    <div class="welcome">
+        <h1>Bienvenidos a &nbsp;<span>TuCallao</span></h1>
+    </div>
+    <main>
+        <section class="flujo">
+            <div class="header-flujo">
+                <h2>Principales Destinos</h2>
+                <div class="ver-todos"><a href="">Ver Todos &nbsp;<i class="fa-solid fa-circle-chevron-right"></i></a></div>
+            </div>
+            <div class="body-flujo">
+                <div class="item"><a href="">
+                    <figure><img th:src="@{/img/portada/real-felipe-300x200.jpg}" alt="Real Felipe">
+                        <figcaption>
+                            <h3>Fortaleza del Real Felipe</h3>
+                            <p>Fortaleza antigua, recorridos y museo</p>
+                        </figcaption>
+                    </figure></a></div>
+                <div class="item"><a href="">
+                    <figure><img th:src="@{img/portada/museo-naval-300x200.jpg}" alt="Museo Naval del Perú">
+                        <figcaption>
+                            <h3>Museo Naval del Perú</h3>
+                            <p>Museo, historia y museo maritimo</p>
+                        </figcaption>
+                    </figure></a></div>
+                <div class="item"><a href="">
+                    <figure><img th:src="@{img/portada/monumental-callao-300x200.jpg}" alt="Zona Monumental del Callao">
+                        <figcaption>
+                            <h3>Zona Monumental del Callao</h3>
+                            <p>Centro de galerías de arte y murales</p>
+                        </figcaption>
+                    </figure></a></div>
+            </div>
+        </section>
+        <section class="flujo">
+            <div class="header-flujo">
+                <h2>Galería de Fotos</h2>
+                <div class="ver-todos"><a href="">Ver Todos &nbsp;<i class="fa-solid fa-circle-chevron-right"></i></a></div>
+            </div>
+            <div class="body-flujo">
+                <div class="item"><a href="galeria.jsp">
+                    <figure><img th:src="@{img/portada/aniversario-callao-300x200.jpg}" alt="Aniversario del Callao">
+                        <figcaption>
+                            <h3>Aniversario del Callao</h3>
+                            <p>Aniversario de la provincia constitucional</p>
+                        </figcaption>
+                    </figure></a></div>
+                <div class="item"><a href="">
+                    <figure><img th:src="@{img/portada/san-pedro-pablo-300x200.jpg}" alt="Día de San Pedro y San Pablo">
+                        <figcaption>
+                            <h3>Día de San Pedro y San Pablo</h3>
+                            <p>Evento que conmemora a los 2 santos</p>
+                        </figcaption>
+                    </figure></a></div>
+                <div class="item"><a href="">
+                    <figure><img th:src="@{img/portada/virgen-carmen-300x200.jpg}" alt="Virgen del Carmen">
+                        <figcaption>
+                            <h3>Virgen del Carmen</h3>
+                            <p>Santa patrona coronada de la provincia de Carmen de la Legua</p>
+                        </figcaption>
+                    </figure></a></div>
+            </div>
+        </section>
+        <section class="que-hacer"><a href=""><img th:src="@{img/banner-que-hacer.jpg}" alt="Qué hacer en el Callao"></a></section>
+        <section class="donde-comer">
+            <h2>¿Dónde Comer? &nbsp;<i class="fa-solid fa-utensils"></i></h2>
+            <div>
+                <figure class="principal"><img th:src="@{img/choritos-chalaca.jpg}" alt="Choritos a la Chalaca"></figure>
+                <div>
+                    <h4>Restaurantes más populares según:</h4>
+                    <ul>
+                        <li>La Caleta de La Punta</li>
+                        <li>Donde Yolo Restaurante</li>
+                        <li>Cabos Restaurante del Puerto</li>
+                        <li>Paprika Restaurant</li>
+                        <li>El Mirador</li>
+                    </ul>
+                </div>
+                <p><a href="">más sobre nuestra gastronomía... &nbsp;<i class="fa-solid fa-magnifying-glass"></i></a></p>
+                <figure class="tripadvisor"><img th:src="@{img/logo-tripadvisor.png}" alt="TripAdvisor"></figure>
+            </div>
+        </section>
+        <section class="quienes-somos">
+            <div>
+                <h2>Quiénes Somos</h2>
+                <p>Somos una empresa promotora del turismo en el Callao, con más de 10 años en la industria de Turismo. Diseñamos y operamos programas turísticos para viajeros individuales, agencias de viajes y corporaciones de todo el mundo.</p><a class="btn" th:href="@{/quienes-somos}">Seguir Leyendo</a>
+            </div>
+            <figure><img th:src="@{img/banner-quienes-somos.jpg}" alt="Quiénes Somos"></figure>
+        </section>
+    </main>
+    <!-- FOOTER
+
+    -->
+
+    <!-- FOOTER -->
+    <footer th:replace="~{footer::footer}"></footer>
+</div>
+</body>
+</html>

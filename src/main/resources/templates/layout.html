@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title>Tu Callao - Picardía Sabor y Sazón | Tu Callao</title>
+    <link rel="icon" type="img/png" sizes="16x16" th:href="@{/img/favicon-16x16.png}">
+    <link th:href="@{/style/bootstrap/bootstrap.css}" rel="stylesheet">
+    <link th:href="@{/style/css/forms.css}" rel="stylesheet">
+    <link th:href="@{/style/css/styles.css}" rel="stylesheet">
+    <link th:href="@{/style/bootstrap/font/bootstrap-icons.css}" rel="stylesheet">
+    <script th:src="@{/script/bootstrap/bootstrap.bundle.js}" type="text/javascript"></script>
+</head>
+<body>
+<header th:fragment="header" id="header">
+    <div id="admin" class="admin">
+        <span id="user"></span>
+        <a id="panel"></a>
+        <a href="/Proyecto/reserva-login.jsp" id="session">Iniciar sessión &nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+    </div>
+    <div class="clearfix">
+        <div class="logo"><a th:href="@{/index}"><img th:src="@{img/logo.png}" alt="Logo"></a></div>
+        <div class="social-buttons">
+            <ul>
+                <li><a href="https://www.facebook.com/cibertecoficial/"><i class="bi bi-facebook"></i></a></li>
+                <li><a href="https://twitter.com/CiberTweets"><i class="bi bi-twitter"></i></a></li>
+                <li><a href="https://www.instagram.com/cibertecoficial/"><i class="bi bi-instagram"></i></a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="clearfix">
+        <!-- HEADER
+         <jsp:include page="menu.jsp" />-->
+        <nav>
+            <ul>
+                <li><a th:href="@{/index}">INICIO</a></li>
+                <li><a th:href="@{atractivos-turisticos.jsp?force-reload}">ATRACTIVOS  TURÍSTICOS &nbsp;<i class="fa-solid fa-caret-right"></i></a>
+                    <ul>
+                        <li><a th:href="fortaleza-real-felipe.jsp?force-reload">Fortaleza del Real Felipe</a></li>
+                        <li><a th:href="museo-naval-peru.jsp?force-reload">Museo Naval del Perú</a></li>
+                        <li><a th:href="zona-monumental-callao.jsp?force-reload">Zona Monumental del Callao</a></li>
+                        <li><a th:href="huaca-el-paraiso.jsp?force-reload">Huaca el Paraíso</a></li>
+                        <li><a th:href="museo-submarino-abtao.jsp?force-reload">Museo Submarino Abtao</a></li>
+                        <li><a th:href="humedales-de-ventanilla.jsp?force-reload">Humedales de Ventanilla</a></li>
+                        <li><a th:href="plaza-matriz.jsp?force-reload">Plaza Matriz del Callao</a></li>
+                        <li><a th:href="isla-el-fronton.jsp?force-reload">Isla el Frontón</a></li>
+                        <li><a th:href="islas-cavinzas.jsp?force-reload">Islas Cavinzas</a></li>
+                        <li><a th:href="balneario-chucuito.jsp?force-reload">Balneario de Chucuito</a></li>
+                    </ul>
+                </li>
+                <li><a th:href="gastronomia.jsp?force-reload">GASTRONOMÍA</a></li>
+                <li><a th:href="galeria.jsp?force-reload">FOTOS</a></li>
+                <li><a th:href="videos.jsp?force-reload">VIDEOS</a></li>
+                <li><a th:href="quienes-somos.jsp?force-reload">QUIENES SOMOS</a></li>
+                <li><a th:href="contactenos.jsp?force-reload">CONTÁCTENOS</a></li>
+
+            </ul>
+        </nav>
+        <!-- HEADER -->
+        <div class="search-box">
+            <a class="reserva-aqui" href="ControladorDestinos">RESERVA AQUÍ</a>
+            <!--input type="text" placeholder="Buscar"-->
+        </div>
+
+    </div>
+</header>
+<nav th:fragment="nav">
+
+    <!--
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/index}">Index</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-->
+</nav>
+
+</body>
+</html>
