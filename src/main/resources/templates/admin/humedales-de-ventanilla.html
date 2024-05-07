@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="page-single">
+<div id="container">
+    <!-- HEADER -->
+  <header th:replace="~{layout::header}"></header>
+    <!-- HEADER -->
+    <div class="banner-top"><img th:src="@{img/banner-internas.jpg}" alt="Chucuito"></div>
+    <main>
+        <h1>Humedales de Ventanilla</h1>
+
+        <p><strong>El Área de conservación regional Humedales de Ventanilla es un área protegida en el Perú.</strong></p>
+        <p>El Área de Conservación Regional (ACR) “Humedales de Ventanilla” es alimentada por el sistema hídrico del Río Chillón, por las aguas superficiales de las pozas de oxidación de Sedapal y por las filtraciones de agua de los asentamientos humanos y otras poblaciones aledañas al humedal.</p>
+        <p>Los Humedales de Ventanilla también están influenciados por el sistema marino, especialmente en la zona noroeste. Esto hace que el espacio del ACR tenga un comportamiento de albúfera, es decir, que sus aguas sean ligeramente salobres aunque estén separadas del mar.</p>
+        <figure><img th:src="@{img/humedales-ventanilla/humedales-de-ventanilla.jpg}" alt="Humedales de Ventanilla">
+            <figcaption>Humedales de Ventanilla</figcaption>
+        </figure>
+        <p>El sistema hídrico del interior del ACR, es propicio para el crecimiento de la totora, el junco y el carrizo. En total, existen 27 especies de plantas nativas, quienes cumplen con la función de filtrar y depurar el agua del humedal.</p>
+        <p>La flora, además, ofrece protección y alimento a diversas especies de la fauna, principalmente, a las aves, quienes buscan refugio en ella porque pueden utilizarla para construir sus nidos.</p>
+        <p>Se han registrado 126 especies de aves, entre residentes y migratorias andinas, locales, boreales y australes.</p>
+        <p>Entre ellas, se encuentran aves rapaces, como el gavilán acanelado y el cernícalo americano; aves playeras, como la cigüeñuela y el chorlo gritón; y aves paseriformes, como el sietecolores, junquero y turtupilin.</p>
+        <figure><img th:src="@{img/humedales-ventanilla/humedales-de-ventanilla-2.jpg}" alt="Humedales de Ventanilla">
+            <figcaption>Humedales de Ventanilla</figcaption>
+        </figure>
+        <p>Además, esta área natural protegida es el hogar de 5 especies de reptiles, entre ellos, el gecko (Phyllodactylus sentosus) y la lagartija (Stenocercus modestus), ambas especies endémicas de Lima y en peligro de extinción.</p>
+        <p>Fuente:
+            <cite>https://www.gob.pe/15426-area-de-conservacion-regional-humedales-de-ventanilla-biodiversidad</cite>
+        </p>
+        <div class="comments-form">
+            <h3>Déjanos tu comentario:</h3>
+            <form action="" name="comments">
+                <div class="col1">
+                    <div class="row-form row-inputs">
+                        <div class="tit">¿Qué impresión te dejó?</div>
+                        <label>
+                            <input type="radio" name="caritas" value="in-love" checked><img th:src="@{img/in-love.png}" alt="Feliz">
+                        </label>
+                        <label>
+                            <input type="radio" name="caritas" value="neutral"><img th:src="@{img/neutral.png}" alt="Neutral">
+                        </label>
+                        <label>
+                            <input type="radio" name="caritas" value="sad"><img th:src="@{img/sad.png}" alt="Triste">
+                        </label>
+                        <label>
+                            <input type="radio" name="caritas" value="angry"><img th:src="@{img/angry.png}" alt="molesto">
+                        </label>
+                        <label>
+                            <input type="radio" name="caritas" value="llanto"><img th:src="@{img/llanto.png}" alt="molesto">
+                        </label>
+                    </div>
+                    <div class="row-form">
+                        <textarea name="" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="col2">
+                    <div class="row-form">
+                        <input type="text" name="titulo" placeholder="Titulo del comentario">
+                    </div>
+                    <div class="row-form">
+                        <input type="text" name="nombre" placeholder="Ingresa tu nombre">
+                    </div>
+                    <div class="row-form">
+                        <input type="text" name="email" placeholder="Ingresa tu email">
+                    </div>
+                    <div class="row-form">
+                        <input type="submit" value="Enviar Comentario">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="comments-comment">
+            <div class="comments-items-title">Comentarios:</div>
+            <div class="comment-items-content">
+                <div class="item">
+                    <div class="comment-title">Un lugar hermoso<img th:src="@{img/in-love.png}" alt="Feliz"></div>
+                    <div class="comment-message">Es un lugar hermoso y acogedor, sus casitas de color y su rica comida son los más destacable de este bello y rico puerto chalaco, y que decir de su gente, es muy calida y cariñosa, recomiendo totalmente este lugar para pasar un fin de semana en familia.</div>
+                    <div class="comment-contact">
+                        <div class="comment-name">Maria</div>
+                        <div class="comment-email">mariamer@gmail.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER -->
+   <footer th:replace="~{footer::footer}"></footer>
+    <!-- FOOTER -->
+</div>
+</body>
+</html>

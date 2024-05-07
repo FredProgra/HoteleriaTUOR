@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{layout::head}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body class="page-single page-gastronomia">
+<div id="container">
+    <header th:replace="~{layout::header}"></header>
+    <!-- HEADER -->
+
+    <!-- HEADER -->
+    <div class="banner-top"><img th:src="@{img/banner-internas.jpg}" alt="Chucuito"></div>
+    <main>
+        <h1>Galería de Fotos</h1>
+        <div id="compartir"><a class="fb" href="" target="_blank"><i class="fa-brands fa-facebook"></i></a><a class="tw" href="" target="_blank"><i class="fa-brands fa-twitter"></i></a><a class="wa" href="" target="_blank"><i class="fa-brands fa-whatsapp"></i></a><a class="in" href="" target="_blank"><i class="fa-brands fa-linkedin"></i></a></div>
+        <p><strong>Galería de imágenes:</strong></p>
+        <div id="galeria">
+            <div class="item"><img th:src="@{img/aniversario-callao/aniversario-callao.jpg}" alt="Aniversario del Callao"></div>
+            <div class="item"><img th:src="@{img/chucuito/balneario-chucuito.jpg}" alt="Balneario de Chucuito"></div>
+            <div class="item"><img th:src="@{img/huaca-paraiso/huaca-paraiso.jpg}" alt="Huaca Paraíso"></div>
+            <div class="item"><img th:src="@{img/huaca-paraiso/huaca-paraiso-2.jpg}" alt="Huaca Paraíso"></div>
+            <div class="item"><img th:src="@{img/humedales-ventanilla/humedales-de-ventanilla.jpg}" alt="Humedales de Ventanilla"></div>
+            <div class="item"><img th:src="@{img/humedales-ventanilla/humedales-de-ventanilla-2.jpg}" alt="Humedales de Ventanilla"></div>
+            <div class="item"><img th:src="@{img/isla-cavinzas/isla-cavinzas.jpg}" alt="Isla Cavinzas"></div>
+            <div class="item"><img th:src="@{img/isla-cavinzas/isla-cavinzas-pinguino.jpg}" alt="Isla Cavinzas"></div>
+            <div class="item"><img th:src="@{img/isla-fronton/isla-fronton.jpg}" alt="Isla Frontón"></div>
+            <div class="item"><img th:src="@{img/la-punta/la-punta.jpg}" alt="La Punta"></div>
+            <div class="item"><img th:src="@{img/la-punta/la-punta-dia.jpg}" alt="La Punta"></div>
+            <div class="item"><img th:src="@{img/monumental/monumental.jpg}" alt="Monumental Callao"></div>
+            <div class="item"><img th:src="@{img/monumental/monumental-2.jpg}" alt="Monumental Callao"></div>
+            <div class="item"><img th:src="@{img/museo-naval/museo-naval.jpg}" alt="Museo Naval del Callao"></div>
+            <div class="item"><img th:src="@{img/museo-naval/museo-naval-2.jpg}" alt="Museo Naval del Callao"></div>
+            <div class="item"><img th:src="@{img/plaza-matriz/plaza-matriz.jpg}" alt="Plaza Matriz"></div>
+        </div>
+    </main>
+    <footer th:replace="~{footer::footer}"></footer>
+    <!-- FOOTER -->
+
+    <!-- FOOTER -->
+</div>
+</body>
+</html>
