@@ -1,0 +1,124 @@
+DROP DATABASE TURISMOCALLAO2;
+CREATE DATABASE TURISMOCALLAO2;
+USE TURISMOCALLAO2;
+
+
+# TABLA USUARIO
+CREATE TABLE USUARIO(
+CODUSU INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+NOMUSU VARCHAR(100) NOT NULL,
+APEUSU VARCHAR(100) NOT NULL,
+TEL_RESERVA CHAR(9) NOT NULL,
+EMAIL_RESERVA VARCHAR(50) NOT NULL,
+PASSWORD VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE ROL (
+IDROL INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+NOMROL VARCHAR(300) NULL
+);
+
+CREATE TABLE USUARIO_ROL (
+CODUSU INT NOT NULL,
+IDROL INT NOT NULL,
+CONSTRAINT USER_ROLE_PK PRIMARY KEY (CODUSU, IDROL),
+CONSTRAINT USER_ROLE_FK FOREIGN KEY (CODUSU) REFERENCES USUARIO(CODUSU),
+CONSTRAINT USER_ROLE_FK_1 FOREIGN KEY (IDROL) REFERENCES ROL(IDROL)
+);
+
+# TABLA ESTADO
+CREATE TABLE ESTADO(
+COD_ESTADO boolean PRIMARY KEY NOT NULL,
+NOM_ESTADO VARCHAR(20) NOT NULL
+);
+
+
+CREATE TABLE DESTINO(
+COD_DESTINO CHAR(6) PRIMARY KEY NOT NULL,
+NOM_DESTINO VARCHAR(50) NOT NULL,
+DES_DESTINO VARCHAR(400) NOT NULL,
+PRE_DESTINO FLOAT,
+TICKED_POR_DIA INT(20)
+);
+
+CREATE TABLE COMENTARIO(
+COD_COMENT INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+DESCRIP		VARCHAR(500) NOT NULL,
+COD_DESTINO CHAR(6),
+CODUSU 		INT,
+CONSTRAINT FK_USU FOREIGN KEY (CODUSU) REFERENCES USUARIO(CODUSU),
+CONSTRAINT FK_DEST FOREIGN KEY (COD_DESTINO) REFERENCES DESTINO(COD_DESTINO)
+);
+
+CREATE TABLE PAGO(
+COD_PAGO INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+TIPO_PAGO VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE RESERVA(
+COD_RESERVA INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+NOMBRES VARCHAR(50) NOT NULL,
+APELLIDOS VARCHAR(50) NOT NULL,
+TEL_RESERVA CHAR(9) NOT NULL,
+EMAIL_RESERVA VARCHAR(50) NOT NULL,
+FEC_REGISTRO TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+FEC_RESERVA DATE NOT NULL,
+HOR_INICIO_RESERVA TIME NOT NULL,
+HOR_FIN_RESERVA TIME NOT NULL,
+INF_RESERVA VARCHAR(400) NOT NULL,
+COD_ESTADO BOOLEAN NOT NULL,
+COD_PAGO INT NOT NULL,
+CODUSU INT NOT NULL,
+CONSTRAINT FK_ESTADO FOREIGN KEY (COD_ESTADO) REFERENCES ESTADO(COD_ESTADO),
+CONSTRAINT FK_PAGO FOREIGN KEY (COD_PAGO) REFERENCES PAGO(COD_PAGO),
+CONSTRAINT FK_USUS FOREIGN KEY (CODUSU) REFERENCES USUARIO(CODUSU)
+);
+
+CREATE TABLE DETALLE_RESERVA(
+COD_DETALLE_RESERVA INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+NUM_PERSONAS INT NOT NULL,
+PRECIO_FINAL FLOAT NOT NULL,
+COD_RESERVA INT,
+COD_DESTINO CHAR(6),
+CONSTRAINT FK_RESERVA FOREIGN KEY (COD_RESERVA) REFERENCES RESERVA(COD_RESERVA),
+CONSTRAINT FK_DESTINO FOREIGN KEY (COD_DESTINO) REFERENCES DESTINO(COD_DESTINO)
+);
+
+select * from RESERVA;
+
+INSERT INTO ESTADO VALUES (true,"ACTIVO");
+INSERT INTO ESTADO VALUES (false,"INACTIVO");
+
+INSERT INTO ROL VALUES (1,"ROLE_ADMIN");
+INSERT INTO ROL VALUES (2,"ROLE_USER");
+INSERT INTO ROL VALUES(3,"ROLE_INVITADO");
+
+INSERT INTO USUARIO VALUES (null,"Alfredo","Castillo", "987456345", "alfredo@gmail.com", "$2a$10$7p589xu.7CY6IPaSRSaOLuOS2LIxEwMSnSi9MY2IB.q9cXnc1vTIq");
+INSERT INTO USUARIO VALUES (null,"Julio","Mostol", "977466335", "julio@gmail.com", "$2a$10$7p589xu.7CY6IPaSRSaOLuOS2LIxEwMSnSi9MY2IB.q9cXnc1vTIq");
+INSERT INTO USUARIO VALUES (null,"Angelo","Garcia", "902355355", "angelo@gmail.com", "$2a$10$7p589xu.7CY6IPaSRSaOLuOS2LIxEwMSnSi9MY2IB.q9cXnc1vTIq");
+
+INSERT INTO USUARIO_ROL VALUES(1,1);
+
+INSERT INTO PAGO VALUES (1,'Efectivo'),(2,'Tarjeta'), (3,'Transferencia'),(4,'Otros');
+
+
+INSERT INTO DESTINO VALUES("DE01", "Fortaleza del Real Felipe", "La Fortaleza del Real Felipe es una edificación militar construida en el siglo XVIII en la bahía del Callao para defender el puerto contra los ataques de piratas y corsarios.", 100.00, 20);
+INSERT INTO DESTINO VALUES("DE02", "Museo Naval del Perú", "El Museo Naval del Perú es un museo naval situado en la ciudad del Callao. Es administrado por la Marina de Guerra del Perú. El museo está principalmente dedicado a la historia marítima del Perú.", 80.00, 20);
+INSERT INTO DESTINO VALUES("DE03", "Zona Monumental del Callao", "La Zona Monumental del Callao es el casco histórico en el distrito del Callao, en el Provincia Constitucional del Callao.", 60.00, 20);
+INSERT INTO DESTINO VALUES("DE04", "Huaca el Paraíso", "El Paraíso es el nombre moderno de un complejo arqueológico monumental del Periodo Arcaico Tardío (3500-1800 a. C.)", 30.00, 20);
+INSERT INTO DESTINO VALUES("DE05", "Museo de Sitio Naval Submarino Abtao", "Submarino anclado tipo Sierra que se construyó en la década de 1950 y ahora funciona como museo.", 45.00, 20);
+INSERT INTO DESTINO VALUES("DE06", "Humedales de Ventanilla", "El Área de conservación regional Humedales de Ventanilla es un área protegida en el Perú. Se encuentra en la región Callao, en la provincia de Provincia Constitucional del Callao.​", 30.00, 20);
+INSERT INTO DESTINO VALUES("DE07", "Plaza Matriz del Callao", "Considerado patrimonio cultural de la nación, el Centro Historico del Callao fue testigo de importantes hechos históricos.", 30.00, 20);
+INSERT INTO DESTINO VALUES("DE08", "Isla El Frontón", "El Frontón es una pequeña isla ubicada en el Océano Pacífico, cerca de la costa de la ciudad de El Callao, en el Perú. Se le conoce también como Isla Callao.", 85.00, 20);
+INSERT INTO DESTINO VALUES("DE09", "Isla Cavinzas", "Islas Cavinzas son un conjunto de islotes ubicados en el mar del Callao, al noroeste de islas Palomino.", 85, 20);
+INSERT INTO DESTINO VALUES("DE10", "Balneario de Chucuito", "Es un balneario pintoresco del Callao. Sus calles están pintadas con colores vivaces y las viviendas también. Muestra construcciones del siglo IXX y XX, hechas en madera y adobe", 25.00, 20);
+
+
+INSERT INTO RESERVA VALUES(null, "Juan", "Perez", "998008615", "jperez@gmail.com", "2024-05-04", "2024-05-8", "13:00:00", "16:00:00", "Si el tour me va bien, los recomendaré",true, 2, 2);
+INSERT INTO RESERVA VALUES(null, "Roger", "Estrada", "997852489", "restrada@gmail.com", "2024-05-03", "2024-05-9", "13:00:00", "16:00:00", "Me gustaría que la atención sea personalizada.",true, 3, 3);
+INSERT INTO RESERVA VALUES(null, "", "", "", "", "2024-05-09", "2024-05-10", "13:00:00", "16:00:00", "Me gustaría que la atención sea personalizada.",true, 1, 3);
+
+INSERT INTO DETALLE_RESERVA VALUES(NULL,2,200.00,1,"DE01");
+INSERT INTO DETALLE_RESERVA VALUES(NULL,3,240.00,2,"DE02");
+
+INSERT INTO COMENTARIO VALUES(NULL,"Lindo lugar espero poder seguir conociendo mas sitios turisticos como este,gracias","DE01",2);

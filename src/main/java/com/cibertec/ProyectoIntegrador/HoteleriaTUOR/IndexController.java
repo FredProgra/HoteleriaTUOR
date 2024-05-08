@@ -51,7 +51,7 @@ public class IndexController {
 
     @GetMapping("/huaca-el-paraiso")
     public String Huaca_el_paraiso(){
-        return "/admin/huaca-el-paraiso";
+        return "/admin/huaca-paraiso";
     }
     @GetMapping("/museo-submarino-abtao")
     public String Museo_submarino_abtao(){
